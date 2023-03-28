@@ -7,7 +7,7 @@ const navigate=useNavigate();
 
   return (
     <>
-          <form className="mt-8 space-y-6" action="#" method="POST" onSubmit={()=>{navigate('/',{state:{email:'shubh@gmail.com',password:'Passowrd!',}});}}>
+          <form className="mt-8 space-y-6" action="#" method="POST" onSubmit={()=>{navigate('/',{state:{email:'shubh@gmail.com',password:'Passowrd!',},replace:true,});}}>
             <input type="hidden" name="remember" defaultValue="true" />
             <div className="-space-y-px rounded-md shadow-sm">
               <div>
