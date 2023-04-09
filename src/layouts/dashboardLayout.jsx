@@ -3,6 +3,7 @@ import { Navigate, Outlet } from 'react-router-dom';
 import Header from '../compoents/header';
 import { AuthContext } from '../context/authContext';
 import { CounterProvider } from '../context/counterContext';
+import { ProductProvider } from '../context/productContext';
 
 const DashboardLayout = () => {
   const { user } = useContext(AuthContext);
@@ -12,10 +13,12 @@ const DashboardLayout = () => {
   }
 
   return (
-    <CounterProvider>
-      <Header />
-      <Outlet />
+    <ProductProvider>
+      <CounterProvider>
+        <Header />
+        <Outlet />
       </CounterProvider>
+    </ProductProvider>
   );
 };
 
