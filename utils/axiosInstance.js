@@ -1,0 +1,34 @@
+import axios from 'axios';
+
+const axiosInstance = axios.create({
+  baseURL: 'http://localhost:3000',
+  timeout: 5000,
+  timeoutErrorMessage: 'Try after Some time',
+});
+
+axiosInstance.interceptors.request.use(
+  (config) =>
+    // Do something before request is sent
+    config,
+  (error) =>
+    // Do something with request error
+    Promise.reject(error)
+);
+
+// Add a response interceptor
+axiosInstance.interceptors.response.use(
+  (response) =>
+    // Any status code that lie within the range of 2xx cause this  to trigger
+    // Do something with response data
+    response,
+  (error) => {
+    // Any status codes that falls outside the range of 2xx cause this  to trigger
+    // Do something with response error
+    if (error?.response?.data) {
+      return Promise.reject(new Error(error.response.data));
+    }
+    Promise.reject(error);
+  }
+);
+
+export default axiosInstance;

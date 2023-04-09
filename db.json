@@ -25,5 +25,25 @@
       "isDone": false,
       "id": 12
     }
+  ],
+  "users": [
+    {
+      "email": "shubham12@gmail.com",
+      "password": "$2a$10$fTKpesMa5kNpUOGEZtqAiO9HnlAhKaNQN74AQi0YJR7pfYLE63AwG",
+      "name": "Shubham",
+      "id": 1
+    },
+    {
+      "email": "utk@gmail.com",
+      "password": "$2a$10$HC1TCrmNVoFYLTyyvvdtx.3iM2JJrFwCxSZK90bISuHrvmL3uvBum",
+      "name": "hsk",
+      "id": 2
+    },
+    {
+      "email": "utk1@gmail.com",
+      "password": "$2a$10$a6Epa1oNxhd49vGCQ7PtAOgvFgj49wktXgpAIMye4kcPImasDF14C",
+      "name": "hsk",
+      "id": 3
+    }
   ]
 }
