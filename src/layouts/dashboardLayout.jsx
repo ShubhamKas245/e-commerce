@@ -4,6 +4,7 @@ import Header from '../compoents/header';
 import { AuthContext } from '../context/authContext';
 import { CounterProvider } from '../context/counterContext';
 import { ProductProvider } from '../context/productContext';
+import { CartProvider } from '../context/cartContext';
 
 const DashboardLayout = () => {
   const { user } = useContext(AuthContext);
@@ -14,10 +15,12 @@ const DashboardLayout = () => {
 
   return (
     <ProductProvider>
-      <CounterProvider>
-        <Header />
-        <Outlet />
-      </CounterProvider>
+      <CartProvider>
+        <CounterProvider>
+          <Header />
+          <Outlet />
+        </CounterProvider>
+      </CartProvider>
     </ProductProvider>
   );
 };
